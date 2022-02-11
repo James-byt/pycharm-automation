@@ -9,7 +9,7 @@ I_want_money.connect()  # connect to iqoption
 goal = "EURUSD-OTC"
 size = 300  # size=[1,5,10,15,30,60,120,300,600,900,1800,3600,7200,14400,28800,43200,86400,604800,2592000,"all"]
 timeperiod = 5 #
-maxdict = 20 #number of candele sticks
+maxdict = 20 #number of candele stick
 print("start stream...")
 I_want_money.start_candles_stream(goal, size, maxdict)
 print("Start EMA Sample")
