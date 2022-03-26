@@ -5,14 +5,14 @@ import numpy as np
 import pyodbc
 from datetime import date
 
-#Currency = USDJPY
+# Currency = AUDUSD
 
 print("login...")
 API = IQ_Option("debeilarh@gmail.com", "0828383312iq")
 API.connect()  # connect to iqoption
-MODE ="REAL" #"PRACTICE"/"REAL"
+MODE = "REAL"
 API.change_balance(MODE)
-goal = "USDJPY"
+goal = "EURCHF"
 new_money = 10
 
 size = 900  # size=[1,5,10,15,30,60,120,300,600,900,1800,3600,7200,14400,28800,43200,86400,604800,2592000,"all"]

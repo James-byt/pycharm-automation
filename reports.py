@@ -14,13 +14,14 @@ conn = pyodbc.connect(
 
 
 def read_allocated(conn):
+    trade_days = 1
     new_amount = []
     currency = []
     cursor = conn.cursor()
     cursor.execute("select * from Amounts ")
     # records = cursor.fetchall()
     for row in cursor:
-        new_amount.append(row[2])
+        new_amount.append(row[2] * trade_days)
         currency.append(row[1])
     amount = new_amount
     currency_pairs = currency
@@ -28,9 +29,9 @@ def read_allocated(conn):
 
 
 def read_results(conn):
-    date_from_str = "09/02/22"
+    date_from_str = "18/02/22"
     date_from = datetime.strptime(date_from_str, '%d/%m/%y')
-    date_to_str = "11/02/22"
+    date_to_str = "18/02/22"
     date_to = datetime.strptime(date_to_str, '%d/%m/%y')
     new_results = []
     currency = []
@@ -48,9 +49,9 @@ def read_results(conn):
 
 
 def read_overall(conn):
-    date_from_str = "09/02/22"
+    date_from_str = "18/02/22"
     date_from = datetime.strptime(date_from_str, '%d/%m/%y')
-    date_to_str = "11/02/22"
+    date_to_str = "18/02/22"
     date_to = datetime.strptime(date_to_str, '%d/%m/%y')
     overall_results = 0
     cursor = conn.cursor()
@@ -61,23 +62,22 @@ def read_overall(conn):
     return overall
 
 
+def calculate_win(conn, amount, results):
+    win_percent = []
+    for win in results:
+        if win < 0:
+            win = 0
+        win_percent.append(win/amount[0] * 100)
+    win_percent = win_percent
+    return win_percent
+
+
 def addlabels(y):
     for index, value in enumerate(y):
         plt.text(index, value, str(value))
 
 
-# Allocated amonut
-amount, currency_pairs = read_allocated(conn)
-
-plt.pie(amount,
-        labels=currency_pairs,
-        autopct='%1.1f%%')
-
-plt.title('Allocated amount breakdown from 10% of balance ')
-plt.axis('equal')
-plt.show()
-
-# Daily trade progress
+#Daily trade progress
 currency_results, results = read_results(conn)
 negative = []
 positive = []
@@ -103,4 +103,26 @@ ax = fig.add_axes([0, 0, 1, 1])
 x = ["Overall Results"]
 ax.bar(x, overall)
 plt.text(0, overall, str(overall))
+plt.show()
+
+# % win amount
+amount, currency_pairs = read_allocated(conn)
+win_percent = calculate_win(conn, amount, results)
+new_percent = []
+for rounded in win_percent:
+    new_percent.append(round(rounded))
+win_percent = new_percent
+fig = plt.figure()
+ax = fig.add_axes([0, 0, 1, 1])
+ax.bar(currency_results, win_percent)
+addlabels(win_percent)
+plt.show()
+
+# % win
+
+plt.pie(win_percent,
+       labels=currency_pairs,
+        autopct='%1.1f%%')
+plt.title(f'Allocated amount breakdown from {amount[0]} which is 10% of balance')
+plt.axis('equal')
 plt.show()
