@@ -11,7 +11,7 @@ from datetime import date
 print("login...")
 API = IQ_Option("debeilarh@gmail.com", "0828383312iq")
 API.connect()  # connect to iqoption
-MODE ="REAL"
+MODE ="PRACTICE"
 API.change_balance(MODE)
 goal = "AUDUSD"
 new_money = 10

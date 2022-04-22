@@ -29,9 +29,9 @@ def read_allocated(conn):
 
 
 def read_results(conn):
-    date_from_str = "18/02/22"
+    date_from_str = "11/04/22"
     date_from = datetime.strptime(date_from_str, '%d/%m/%y')
-    date_to_str = "18/02/22"
+    date_to_str = "11/04/22"
     date_to = datetime.strptime(date_to_str, '%d/%m/%y')
     new_results = []
     currency = []
@@ -49,9 +49,9 @@ def read_results(conn):
 
 
 def read_overall(conn):
-    date_from_str = "18/02/22"
+    date_from_str = "11/04/22"
     date_from = datetime.strptime(date_from_str, '%d/%m/%y')
-    date_to_str = "18/02/22"
+    date_to_str = "11/04/22"
     date_to = datetime.strptime(date_to_str, '%d/%m/%y')
     overall_results = 0
     cursor = conn.cursor()
@@ -75,6 +75,7 @@ def calculate_win(conn, amount, results):
 def addlabels(y):
     for index, value in enumerate(y):
         plt.text(index, value, str(value))
+
 
 
 #Daily trade progress
@@ -120,9 +121,9 @@ plt.show()
 
 # % win
 
-plt.pie(win_percent,
-       labels=currency_pairs,
-        autopct='%1.1f%%')
-plt.title(f'Allocated amount breakdown from {amount[0]} which is 10% of balance')
-plt.axis('equal')
-plt.show()
+#plt.pie(win_percent,
+#       labels=currency_pairs,
+#        autopct='%1.1f%%')
+#plt.title(f'Allocated amount breakdown from {amount[0]} which is 10% of balance')
+#plt.axis('equal')
+#plt.show()

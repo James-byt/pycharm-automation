@@ -10,7 +10,7 @@ from datetime import date
 print("login...")
 API = IQ_Option("debeilarh@gmail.com", "0828383312iq")
 API.connect()  # connect to iqoption
-MODE ="REAL" #"PRACTICE"/"REAL"
+MODE ="PRACTICE" #"PRACTICE"/"REAL"
 API.change_balance(MODE)
 goal = "USDJPY"
 new_money = 10
