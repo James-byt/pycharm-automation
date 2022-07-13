@@ -7,8 +7,8 @@ print("login...")
 I_want_money = IQ_Option("debeilahlabirwa@gmail.com", "12345678i")
 I_want_money.connect()  # connect to iqoption
 goal = "EURUSD-OTC"
-size = 300  # size=[1,5,10,15,30,60,120,300,600,900,1800,3600,7200,14400,28800,43200,86400,604800,2592000,"all"]
-timeperiod = 5 #
+size = 900  # size=[1,5,10,15,30,60,120,300,600,900,1800,3600,7200,14400,28800,43200,86400,604800,2592000,"all"]
+#timeperiod = 15 #
 maxdict = 20 #number of candele stick
 print("start stream...")
 I_want_money.start_candles_stream(goal, size, maxdict)
@@ -37,10 +37,12 @@ while True:
     rsi = talib.RSI(inputs["close"],  timeperiod=4)
     slowk, slowd = talib.STOCH(inputs["high"], inputs["low"], inputs["close"], fastk_period=5, slowk_period=1,
                                slowk_matype=1, slowd_period=1,
-                               slowd_matype=1)
+                             slowd_matype=1)
 
-
-
+    sar = talib.SAR(inputs["high"], inputs["low"], acceleration=0.02, maximum=0.2)
+    open_price = inputs['open']
+    print(sar[-1])
     print(rsi[-1])
+    print(open_price[-1])
     time.sleep(1)
 I_want_money.stop_candles_stream(goal, size)

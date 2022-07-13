@@ -100,7 +100,7 @@ def stream():
 
 # create model()
 # NB: You need to use the currents prices and numbers
-def sell_order_zone():
+def sell_order_zone(): #Trade that
     sell_zone = 0
     rsi_lower = 25
     stoch_lower = 20

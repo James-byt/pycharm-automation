@@ -2,6 +2,7 @@ import talib
 from iqoptionapi.stable_api import IQ_Option
 import time
 import numpy as np
+<<<<<<< Updated upstream
 import pyodbc
 from datetime import date
 
@@ -200,3 +201,40 @@ while trade < 5:
 API.stop_candles_stream(goal, size)
 conn.close()
 print("Reached trade limit")
+=======
+#import pyodbc
+from datetime import date
+import os
+import pymssql
+
+server = "localhost"
+user = "sa"
+password = "bigStrongPwd123@"
+
+conn = pymssql.connect(server, user, password, "golden")
+c1 = conn.cursor()
+
+#c1.execute('SELECT * FROM <your_table>')
+#data = c1.fetchall()
+
+#print(data)
+
+
+
+def create(conn, results):
+    today = date.today()
+   # balance = API.get_balance()
+    print("Create")
+    #cursor = conn.cursor()
+    c1.execute(
+        'insert into Trades( Currency, Date, Results, Balance) values(?,?,?,?);',
+        ("USDAUD", today, 10, 10000)
+    )
+    conn.commit()
+    #read(conn)
+
+create(conn)
+print("done")
+
+conn.close()
+>>>>>>> Stashed changes

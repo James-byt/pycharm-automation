@@ -42,12 +42,12 @@ def read(conn):
 
 
 def create(conn, results):
-    today = date.today()
+    today = date.today() 
     balance = API.get_balance()
     print("Create")
     cursor = conn.cursor()
     cursor.execute(
-        'insert into Trades( Currency, Date, Results, Balance) values(?,?,?,?);',
+        'insert into hrages( Currency, Date, Results, Balance) values(?,?,?,?);',
         (goal, today, results, balance)
     )
     conn.commit()

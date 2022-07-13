@@ -1,15 +1,13 @@
+<<<<<<< Updated upstream
 import talib
 from iqoptionapi.stable_api import IQ_Option
 import time
 import numpy as np
 import pyodbc
 from datetime import date
+=======
+>>>>>>> Stashed changes
 
-conn = pyodbc.connect(
-    "Driver={SQL Server Native Client 11.0};"
-    "Server=DESKTOP-QMIE1ES;"
-    "Database=golden;"
-    "Trusted_Connection=yes;")
 
 
 def daily_balance(conn):
@@ -23,9 +21,15 @@ def daily_balance(conn):
     return new_balance
 
 
+<<<<<<< Updated upstream
 def calculate(balance):
     Amount = (balance * 7 / 100) // 5
     return Amount
+=======
+#def calculate(balance):
+  #  Amount = (balance * 10 / 100) // 5
+  #  return Amount`
+>>>>>>> Stashed changes
 
 
 def set_new_amount(conn, new_amount):
@@ -38,6 +42,7 @@ def set_new_amount(conn, new_amount):
     conn.commit()
 
 
+<<<<<<< Updated upstream
 from iqoptionapi.stable_api import IQ_Option
 API = IQ_Option("debeilarh@gmail.com", "0828383312iq")
 API.connect()  # connect to iqoption
@@ -198,6 +203,12 @@ while trade < 1:
                 break
         # else:
         # print("looking for trades")
+=======
+
+#new_amount = calculate(balance)
+
+#set_new_amount(conn, new_amount)
+>>>>>>> Stashed changes
 
     trade += 1
     first += 1
