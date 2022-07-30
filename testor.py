@@ -5,8 +5,9 @@ from datetime import date
 # retrieve matrix from database into
 
 conn = mysql.connector.connect(
-        user="root",
+        user="gold",
         host="localhost",
+        password="0828383312gg",
         database="testdb"
     )
 
@@ -56,10 +57,6 @@ store_action = [-6,-6,-6]
 retrieve_matrix(conn)
 print(matrix)
 
-delete_submatrix(conn)
-retrieve_matrix(conn)
-print(matrix)
 
-add_submatrix(conn)
-retrieve_matrix(conn)
-print(matrix)
+
+

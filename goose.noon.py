@@ -15,6 +15,18 @@ conn = mysql.connector.connect(
     )
 
 
+def create(conn, results):
+    today = date.today()
+    balance = API.get_balance()
+    print("Create_report")
+    cursor = conn.cursor()
+    sql = "insert into reports_noon ( Currency, Date, Results, Balance) values (%s,%s,%s,%s)"
+    val = (goal, today, results, balance)
+    cursor.execute(sql,val)
+    conn.commit()
+
+
+
 def retrieve_matrix(conn):
     print()
     cursor = conn.cursor()
@@ -54,7 +66,7 @@ while stop_number < 3:
 
     #Currency = AUDUSD
 
-    #print("login...")
+    print("login...")
     API = IQ_Option("debeilarh@gmail.com", "0828383312iq")
     API.connect()  # connect to iqoption
     MODE ="PRACTICE" #PRACTICE or REAL
@@ -182,9 +194,15 @@ while stop_number < 3:
     for action in trades:
         keep_trading = True
         while keep_trading:
-            #new_money = read(conn)
-            #above_zone = 0
-            above_zone = above_order_zone()
+            # new_money = read(conn)
+            # above_zone = 0
+
+            try:
+                above_zone = above_order_zone()
+            except RuntimeError:
+                print("Run time error")
+                above_zone = above_order_zone()
+
             amount = new_money
             ACTIVES = goal
             duration = 1
@@ -198,6 +216,7 @@ while stop_number < 3:
                         break
                 status = API.check_win_digital_v2(id)
                 bol, results = status
+                create(conn, results)
                 # print("Trade results:", action, results)
                 store_action = store_results(action,results)
                 time.sleep(5)
@@ -218,3 +237,4 @@ while stop_number < 3:
     # store matrix back in database
     add_submatrix(conn)
     delete_submatrix(conn)
+    print(date.today())

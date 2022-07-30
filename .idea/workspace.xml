@@ -2,33 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbb5bbc4-84e0-4d1a-bf6b-c89b73f6bbde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Calculate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cron_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goose.b.noon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goose.b.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goose.noon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goose.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.d3.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.d3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.gse1.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.gse1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app2.py" beforeDir="false" afterPath="$PROJECT_DIR$/app2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app3.py" beforeDir="false" afterPath="$PROJECT_DIR$/app3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app4.py" beforeDir="false" afterPath="$PROJECT_DIR$/app4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app5.py" beforeDir="false" afterPath="$PROJECT_DIR$/app5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app6.py" beforeDir="false" afterPath="$PROJECT_DIR$/app6.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app7.py" beforeDir="false" afterPath="$PROJECT_DIR$/app7.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app8.py" beforeDir="false" afterPath="$PROJECT_DIR$/app8.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/try.py" beforeDir="false" afterPath="$PROJECT_DIR$/try.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tryw.py" beforeDir="false" afterPath="$PROJECT_DIR$/tryw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/b.noon.reports.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/b.reports.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goose_reports.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/noon.reports.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goose.b.noon.py" beforeDir="false" afterPath="$PROJECT_DIR$/goose.b.noon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goose.b.py" beforeDir="false" afterPath="$PROJECT_DIR$/goose.b.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goose.noon.py" beforeDir="false" afterPath="$PROJECT_DIR$/goose.noon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goose.py" beforeDir="false" afterPath="$PROJECT_DIR$/goose.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testor.py" beforeDir="false" afterPath="$PROJECT_DIR$/testor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.goose">
+  <component name="RunManager" selected="Python.goose_reports">
     <configuration name="goose" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pycharm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,7 +135,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="goose_reports" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pycharm" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -163,7 +147,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testor.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/goose_reports.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.goose" />
-        <item itemvalue="Python.testor" />
-        <item itemvalue="Python.goose.noon" />
-        <item itemvalue="Python.goose.b" />
+        <item itemvalue="Python.goose_reports" />
         <item itemvalue="Python.goose.b.noon" />
+        <item itemvalue="Python.goose.noon" />
+        <item itemvalue="Python.goose" />
+        <item itemvalue="Python.goose.b" />
       </list>
     </recent_temporary>
   </component>
